@@ -4,6 +4,10 @@
     margin: 0;
     text-align: center;
 }
+h4{
+    text-align: end;
+    padding-right: 80px;
+}
 .img-container{
     margin: 40px auto;
     object-fit:fill;
@@ -31,3 +35,6 @@
     padding: 0px 5px;
     vertical-align: middle;
   }
+#next{
+    z-index: 500;
+}
