@@ -27,41 +27,40 @@ images.forEach(element => {
 
 
 // console.log(images);
-var contatoreImg=0;
+let contatoreImg = 0;
 
-
+console.log("immagini",images.length)
 
 function carosello(){
     
-    if( contatoreImg < images.length - 1){
-        console.log(immagini[1]);
-        document.getElementById("next").classList.remove("img-no");
+    if (contatoreImg === 4){
+        // console.log("dentro if", contatoreImg)
         immagini[contatoreImg].classList.remove("img-yes");
-        console.log("statore contatore",contatoreImg)
-        contatoreImg++;
+        contatoreImg= 0;
         immagini[contatoreImg].classList.add("img-yes");
-        document.getElementById("prev").classList.remove("img-no");
-
+        return
     }
-    // if(contatoreImg === images.length-1){
-    //     images[contatoreImg-1].classList.remove("img-yes");
-    //     images[contatoreImg].classList.add("img-no");
-    // }
+    // console.log("stato contatore",contatoreImg)
+    immagini[contatoreImg].classList.remove("img-yes");
+    contatoreImg++;
+    immagini[contatoreImg].classList.add("img-yes");
+    document.getElementById("next").classList.remove("img-no");
 
-    if(contatoreImg === images.length - 1){
-        document.getElementById("next").classList.add("img-no");
-
-    }
 }
+
 function carosello2(){
+    if (contatoreImg === 0){
+        // console.log("dentro if", contatoreImg)
+        immagini[contatoreImg].classList.remove("img-yes");
+        contatoreImg= 4;
+        immagini[contatoreImg].classList.add("img-yes");
+        return
+    }
     console.log("stato contatore",contatoreImg)
     immagini[contatoreImg].classList.remove("img-yes");
     contatoreImg--;
     immagini[contatoreImg].classList.add("img-yes");
     document.getElementById("next").classList.remove("img-no");
-    if (contatoreImg ===0){
-        document.getElementById("prev").classList.add("img-no");
-    }
 } 
 
 
